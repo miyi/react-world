@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import { render } from 'react-dom';
+import './styles/index.scss';
+import Map from './components/Map.jsx';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<Map/>, document.querySelector('#root'));

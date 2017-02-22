@@ -1,9 +1,11 @@
+var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
   inject: 'body'
-})
+});
 
 module.exports = {
   entry: './client/index.js',
@@ -14,8 +16,25 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }, 
+      {
+        test: /\.css$/,
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css-loader!sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+        exclude: /node_modules/
+      }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  resolve: {
+    modules: [
+      path.resolve('./client'),
+      path.resolve('./node_modules')
+    ]
+  },
+  plugins: [
+    HtmlWebpackPluginConfig
+  ]
 }
