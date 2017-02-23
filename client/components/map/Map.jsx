@@ -2,7 +2,7 @@ import React from 'react';
 import { defaultProps, withState, compose, withHandlers } from 'recompose';
 import GoogleMapReact from 'google-map-react';
 import MyMarker from './MyMarker.jsx';
-import GmapConfig from '../settings/Gmapconfig.js'; 
+import GmapConfig from '../../settings/Gmapconfig.js'; 
 //
 
 const map = ({

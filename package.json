@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "google-map-react": "^0.22.3",

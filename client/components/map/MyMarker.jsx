@@ -1,6 +1,6 @@
 import React from 'react';
 import { defaultProps } from 'recompose';
-import myMarkerStyle from '../styles/myMarker.css';
+import myMarkerStyle from './myMarker.css';
 
 const myMarker = ({ theme, color, hover }) => (
   <div className={theme.component}>
