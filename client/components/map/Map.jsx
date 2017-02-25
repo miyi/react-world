@@ -30,7 +30,7 @@ const map = ({
     {
       markers.map(({ lat, lng, id }, index) => (
         <MyMarker 
-          key={id}
+          key={index}
           id={id}
           hover={hoveredMarkerId === id}
           color={index}
@@ -45,23 +45,23 @@ const map = ({
 export default compose(
 	defaultProps({
   		markers: [
-     		{ id: 'one', lat: 55.7558, lng: 37.6173 },
-     		{ id: 'two', lat: 55.9658, lng: 38.7373 }
+     		{ id: 'five', lat: 49.262428, lng: -123.244629 },
+     		{ id: 'two', lat: 49.263324, lng: -123.249779 }
    		]
   	}),
   withState('mapProps', 'onMapPropsChange', {
     center: {
-     lat: 55.7558,
-     lng: 37.6173
+     lat: 49.2633682,
+     lng: -123.251087
     },
-    zoom: 4
+    zoom: 15
   }),
   withState('hoveredMarkerId', 'setHoveredMarkerId', () => undefined),
   withHandlers({
     distanceToMouse: () => ({ x, y }, { x: mouseX, y: mouseY }, markerProps) => {
       // if mouse outside marker rectangle return some big number
-      const MARKER_WIDTH = 70;
-      const MARKER_HEIGHT = 30;      
+      const MARKER_WIDTH = 50;
+      const MARKER_HEIGHT = 50;      
       if (
         Math.abs(x - mouseX) > MARKER_WIDTH / 2 ||  
         Math.abs(y - mouseY) > MARKER_HEIGHT / 2
