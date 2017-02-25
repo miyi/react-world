@@ -1,4 +1,4 @@
-export default markerData = [
+export default [
 	{
 		name: "John Wick",
 		couse: "MATH101",
@@ -22,18 +22,18 @@ export default markerData = [
 	},{
 		name: "Cam Coen",
 		couse: "MATH101",
-		Lat: 49.261165, -123.255489
+		Lat: 49.261165, 
 		Lng: -123.255489
 	},{
 		name: "Adam Arwen",
 		couse: "MATH101",
-		Lat: 49.263707, ,
+		Lat: 49.263707, 
 		Lng: -123.255339
 	},{
 		name: "David Doe",
 		couse: "MATH101",
-		Lat: 49.266703,
-		Lng: -123.256389,
+		Lat: 49.266203,
+		Lng: -123.251389,
 	},
 ]
 

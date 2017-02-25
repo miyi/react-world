@@ -3,6 +3,7 @@ import { defaultProps, withState, compose, withHandlers } from 'recompose';
 import GoogleMapReact from 'google-map-react';
 import MyMarker from './MyMarker.jsx';
 import GmapConfig from '../../settings/Gmapconfig.js'; 
+import markerData from './markerData.js'
 //
 
 const map = ({
@@ -28,14 +29,14 @@ const map = ({
     onChildMouseLeave={onChildMouseLeave}
   >
     {
-      markers.map(({ lat, lng, id }, index) => (
+      markers.map(({ Lat, Lng, name }, index) => (
         <MyMarker 
           key={index}
-          id={id}
-          hover={hoveredMarkerId === id}
+          name={name}
+          hover={hoveredMarkerId === index}
           color={index}
-          lat={lat} 
-          lng={lng} 
+          lat={Lat} 
+          lng={Lng} 
         />
       ))
     }
@@ -44,10 +45,7 @@ const map = ({
 
 export default compose(
 	defaultProps({
-  		markers: [
-     		{ id: 'five', lat: 49.262428, lng: -123.244629 },
-     		{ id: 'two', lat: 49.263324, lng: -123.249779 }
-   		]
+  		markers: markerData
   	}),
   withState('mapProps', 'onMapPropsChange', {
     center: {
