@@ -5,7 +5,7 @@ import myMarkerStyle from './myMarker.css';
 
 const myMarker = ({ theme, color, hover, name}) => (
   <div className={theme.component}>
-    <div className={`${theme.content} ${theme[`color_${color}`]} ${hover ? theme.hover : ''}`}>
+    <div className={`${theme.content} ${theme.color} ${hover ? theme.hover : ''}`}>
       {name}
     </div>
   </div>

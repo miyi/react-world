@@ -33,8 +33,6 @@ const map = ({
         <MyMarker 
           key={index}
           name={name}
-          hover={hoveredMarkerId === index}
-          color={index}
           lat={Lat} 
           lng={Lng} 
         />
